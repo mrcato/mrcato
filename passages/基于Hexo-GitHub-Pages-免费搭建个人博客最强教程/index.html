@@ -8,12 +8,12 @@
   
   
   
-  <title>基于Hexo+GitHub Pages 免费搭建个人博客最强教程 | CodePress</title>
+  <title>文章标题 | CodePress</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <meta name="keywords" content="Hexo, theme-bmw">
+    <meta name="keywords" content="文章分类,文章标签1,文章标签2,...,">
   
 
   
@@ -195,7 +195,7 @@
 
 <div class="post">
   <h1 class="article-title">
-    <span>基于Hexo+GitHub Pages 免费搭建个人博客最强教程</span>
+    <span>文章标题</span>
   </h1>
   <div class="article-top-meta">
     <span>
@@ -204,6 +204,10 @@
     </span>
     <span>
       分类 : 
+        
+          <a href="/categories/文章分类/">
+            文章分类
+          </a>
         
     </span>
     
@@ -217,7 +221,7 @@
 
   <div class="article-content">
     <div class="markdown-body">
-      
+      <p>在<code>&lt;!-- more --&gt;</code>之后编写文章的正式内容！！！</p>
     </div>
   </div>
   
@@ -286,6 +290,26 @@
       <span>
         <i class="iconfont icon-06tags"></i>标签: 
         
+          
+          <span class="span--tag">
+            <a href="/tags/文章标签1/">
+              #文章标签1
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/文章标签2/">
+              #文章标签2
+            </a>
+          </span>
+          
+          <span class="span--tag">
+            <a href="/tags/">
+              #...
+            </a>
+          </span>
+          
+        
       </span>
     </div>
     <div class="article-meta pull-right">
@@ -313,8 +337,8 @@
     let path = getRealPath()
     new Valine({
       el: "#vcomments",
-      appId: "Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz",
-      appKey: "WaR7nrzhliHj9aVwdQzkdlGd",
+      appId: "UyeOUjWOhIoo9oVtNWIKik4S-gzGzoHsz",
+      appKey: "qmUgiefUjh04jkrS6SAqRAXb",
       notify: false,
       verify: false,
       avatar: "robohash",
@@ -329,7 +353,7 @@
     <script defer>
 const valineAPI = (() => {
   try {
-    AV.init("Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz", "WaR7nrzhliHj9aVwdQzkdlGd");
+    AV.init("UyeOUjWOhIoo9oVtNWIKik4S-gzGzoHsz", "qmUgiefUjh04jkrS6SAqRAXb");
   } catch(error) {}
   const isExist = (identity) => {
     identity = identity || getRealPath();

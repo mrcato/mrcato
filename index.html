@@ -186,7 +186,7 @@
   <div class="post">
     <h1 class="article-title">
       <a href="/passages/基于Hexo-GitHub-Pages-免费搭建个人博客最强教程/">
-        <span>基于Hexo+GitHub Pages 免费搭建个人博客最强教程</span>
+        <span>文章标题</span>
       </a>
     </h1>
     <!-- PC端文章信息 -->
@@ -203,6 +203,10 @@
       <span>
         分类 :
         
+          <a href="/categories/文章分类/">
+            文章分类
+          </a>
+        
       </span>
       
         <span>
@@ -214,7 +218,7 @@
     <!-- 文章简介 -->
     <div class="article-content">
       <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
-        
+        <p>在<code>&lt;!-- more --&gt;</code>之前编写文章的摘要内容！！！</p>
       </div>
     </div>
     <div class="article-footer">
@@ -223,9 +227,33 @@
         <span class="pc-view">
           <i class="iconfont icon-tag"></i>分类:
           
+            <a href="/categories/文章分类/">
+              文章分类
+            </a>
+          
         </span>
         <span>
           <i class="iconfont icon-06tags"></i>标签:
+          
+            
+              <span class="span--tag">
+                <a href="/tags/文章标签1/">
+                  #文章标签1
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/文章标签2/">
+                  #文章标签2
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/">
+                  #...
+                </a>
+              </span>
+            
                     
         </span>
       </div>
@@ -249,7 +277,7 @@
     <script defer>
 const valineAPI = (() => {
   try {
-    AV.init("Hyq9wkH495DgNHWhDQCOfQSp-gzGzoHsz", "WaR7nrzhliHj9aVwdQzkdlGd");
+    AV.init("UyeOUjWOhIoo9oVtNWIKik4S-gzGzoHsz", "qmUgiefUjh04jkrS6SAqRAXb");
   } catch(error) {}
   const isExist = (identity) => {
     identity = identity || getRealPath();
