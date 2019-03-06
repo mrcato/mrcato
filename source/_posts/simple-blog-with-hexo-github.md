@@ -12,33 +12,45 @@ tags:
 
 <!-- more -->
 
-# 准备：
+本人小白一个，因为看到了一个简洁的博客，然后学着搭建了这个个人博客，整理下如何使用 Github 和 Hexo 搭建自己的博客的小白教程，主要介绍了如何使用Hexo框架，如何部署到Github项目中，使用自定义域名等，希望能帮你节省一点儿时间。
+
+**==搭建步骤==**
+
+1.  安装Git
+2.  安装Node.js
+3.  安装Hexo
+4.  GitHub创建个人仓库
+5.  生成SSH添加到GitHub
+6.  将hexo部署到GitHub
+7.  设置个人域名
+8.  发布文章
+# 1. 准备：
 
 我们需要安装Git、Node.js、Hexo以及注册一个GitHub账号。
 
 [Git官网下载地址](https://gitforwindows.org/)
 [Node.js官网下载地址](https://nodejs.org/en/)
 
-### 下载安装Git
+### 1.1 下载安装Git
 
 ![git-for-windows-download-page](../../images/git-for-windows-download-page.png)
 
-### 下载安装Node.js
+### 1.2 下载安装Node.js
 
 ![nodejs-download-page](../../images/nodejs-download-page.png)
 
-### 注册github
+### 1.3 注册github
 
 打开[Github](https://github.com), 点击signup
 >  -username 用小写；
 >  -邮箱用真实邮箱；
 
-### 创建Repository
+### 1.4 创建Repository
 > **Repository 名字应该是http://username.github.io**
 
 ![github-create-new-repository](../../images/github-create-new-repository.png)
 
-# 配置SSH
+# 2. 配置SSH
 
 程序菜单栏找到并打开 Git Bash ，执行下面的命令生成 SSH 访问私钥及公钥。
 
@@ -67,7 +79,7 @@ $ ssh -T git@github.com
 Enter passphrase for key '/c/Users/lenovo/.ssh/id_rsa':
 ```
 
-## 设置用户信息
+## 2.1 设置用户信息
 现在已经可以通过 SSH 链接到 GitHub 啦!当然还需要完善一些个人信息:
 ```text
 $ git config --global user.name "yourusername"//输入注册时的username
@@ -75,7 +87,7 @@ $ git config --global user.email  "email@domain.com"//填写注册邮箱
 ```
 
 
-# 安装Hexo
+# 3. 安装Hexo
 上面两个工具安装完整之后，打开 `Git Bash` ，只需要使用npm即可完成Hexo的安装。
 
 ```
@@ -83,7 +95,7 @@ $ npm install -g hexo-cli
 
 ```
 
-## 创建独立博客项目文件夹
+## 3.1 创建独立博客项目文件夹
 安装完成后，关掉前面那个 Git Bash 窗口。在本地创建一个与 Repository 中博客项目同名的文件夹（如E:\[http://username.github.io](http://username.github.io)）在文件夹上点击鼠标右键，选择 Git bash here；
 
 > 提示:在进行博客搭建工作时，每次使用命令都要在 H:\[http://username.github.io](http://username.github.io) 目录下。
@@ -350,7 +362,7 @@ tags:
 
 请进入`leancloud`中您的应用 => 左侧导航栏 => 设置 => 安全中心，进行相关配置：
 首先，关闭不需要的“服务开关” (仅保留“数据存储”服务)：
-最后，设置您的“Web”安全域名 (就是您的博客/个人网站地址):
+最后，设置您的“Web”安全域名 (就是您的博客/个人网站地址)。
 # 部署到Github
 本地成功后下面就要部署到Git了，打开_config.yml进行配置，如下图，复制你的仓库地址给repo参数(上面有讲怎么复制）。
 
@@ -367,7 +379,7 @@ deploy:
 $ hexo g
 $ hexo d
 ```
-在浏览器输入：[username.github.io](http://username.github.io)，查看效果，这样就搭建好。
+在浏览器输入：[username.github.io](http://username.github.io)，查看效果，这样就搭建好了。
 # 绑定自定义域名
 打开CMD，`yourname.github.io` 得到IP地址，见下图。
 
@@ -386,8 +398,8 @@ hexo new "name"
 其中name为博文的名字，建立完成之后，可以在./source/_posts文件夹下发现我们刚刚建立的 name.md文件。使用你熟悉的编辑器打开，便可以进行博文的撰写。博文支持MarkDown语法的编写，下面是一个示例文件的内容
 ```
 ---
-title: name 
-date: 2016-04-06 10:34:21
+title: name #文章页面上的显示名称，可以任意修改，不会出现在URL中
+date: 2016-04-06 10:34:21 #文章生成时间，一般不改，当然也可以任意修改
 permalink: （url中显示的标题）
 tags: 
 - 开始
@@ -396,7 +408,6 @@ categories:
 - 日志
 ---
 Hello world，Test！！
----
 
 这里可以写文章的摘要。
 
@@ -406,4 +417,121 @@ Hello world，Test！！
 
 ```
 
-写好博客后就可以使用命令 `hexo clean && hexo g && hexo d` 发布到Github了（域名访问的请去掉 `hexo clean`），下面是博客效果。
+写好博客后就可以使用命令 `hexo clean && hexo g && hexo d` 发布到Github了（域名访问的`hexo g && hexo d`）。
+
+# 多设备管理Hexo
+问题来了，如果你现在在自己的笔记本上写的博客，部署在了网站上，那么你在家里用台式机，或者实验室的台式机，发现你电脑里面没有博客的文件，或者要换电脑了，最后不知道怎么移动文件，怎么办？
+
+在这里我们就可以利用git的分支系统进行多终端工作了，这样每次打开不一样的电脑，只需要进行简单的配置和在github上把文件同步下来，就可以无缝操作了。
+
+机制是这样的，由于`hexo d`上传部署到github的其实是hexo编译后的文件，是用来生成网页的，不包含源文件。
+
+也就是上传的是在本地目录里自动生成的`.deploy_git`里面。
+
+其他文件 ，包括我们写在source 里面的，和配置文件，主题文件，都没有上传到github
+所以可以利用git的分支管理，将源文件上传到github的另一个分支即可。
+
+## 上传分支
+
+首先，先在github上新建一个hexo分支，如图：
+
+然后在这个仓库的settings中，选择默认分支为hexo分支（这样每次同步的时候就不用指定分支，比较方便）。
+
+然后在本地的任意目录下，打开git bash，
+```
+git clone git@github.com:ZJUFangzh/ZJUFangzh.github.io.git
+```
+
+将其克隆到本地，因为默认分支已经设成了hexo，所以clone时只clone了hexo。
+
+接下来在克隆到本地的`mrcato.github.io`中，把除了.git 文件夹外的所有文件都删掉
+
+把之前我们写的博客源文件全部复制过来，除了`.deploy_git`。这里应该说一句，复制过来的源文件应该有一个`.gitignore`，用来忽略一些不需要的文件，如果没有的话，自己新建一个，在里面写上如下，表示这些类型文件不需要git：
+```
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+```
+注意，如果你之前克隆过theme中的主题文件，那么应该把主题文件中的`.git`文件夹删掉，因为git不能嵌套上传，最好是显示隐藏文件，检查一下有没有，否则上传的时候会出错，导致你的主题文件无法上传，这样你的配置在别的电脑上就用不了了。
+
+而后
+```
+git add .
+git commit -m 'back up hexo files'
+git push
+```
+
+**可能遇到的问题：**
+> 1. ERROR DEPLOYER NOT FOUND: GIT
+> - 尝试 `npm install hexo-deployer-git --save`解决
+> 2. 继续报错
+> - 把 `.deploy_git`文件夹也删除，重新 `hexo deployer`一次。
+
+这样就上传完了，可以去你的github上看一看hexo分支有没有上传上去，其中`node_modules`、`public`、`db.json`已经被忽略掉了，没有关系，不需要上传的，因为在别的电脑上需要重新输入命令安装 。
+
+这样就上传完了。
+
+## 更换电脑操作
+
+一样的，跟之前的环境搭建一样，
+
+1. 安装git
+2. 安装nodejs
+3. 设置git全局邮箱和用户名
+```
+git config --global user.name "yourgithubname"
+git config --global user.email "yourgithubemail"
+```
+
+4. 设置ssh key
+```
+ssh-keygen -t rsa -C "youremail"
+#验证是否成功
+ssh -T git@github.com
+```
+5. 安装hexo
+```
+$ npm install -g hexo-cli -g
+```
+
+但是已经不需要初始化了，
+
+直接在任意文件夹下，
+```
+git clone git@………………
+```
+然后进入克隆到的文件夹：
+```
+cd xxx.github.io
+npm install
+npm install hexo-deployer-git --save
+```
+生成，部署：
+```
+hexo g
+hexo d
+```
+然后就可以开始写你的新博客了
+1.  不要忘了，每次写完最好都把源文件上传一下
+```
+git add .
+git commit -m 'back up hexo files'
+git push
+```
+
+2. 如果是在已经编辑过的电脑上，已经有clone文件夹了，那么，每次只要和远端同步一下就行了
+```
+git pull
+```
+
+
+参考：
+1. http://fangzh.top/2018/2018090715/index.html
+2. https://godbmw.com/passages/2018-11-15-theme-bmw-docs-zh/
+3. https://www.jianshu.com/p/0b1fccce74e0
+
+
