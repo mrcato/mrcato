@@ -185,6 +185,90 @@
   
   <div class="post">
     <h1 class="article-title">
+      <a href="/passages/test/">
+        <span>文章标题</span>
+      </a>
+    </h1>
+    <!-- PC端文章信息 -->
+    <div class="article-top-meta pc-view">
+      <span>
+        发布时间 : 2019-03-06
+      </span>
+    </div>
+    <!-- 移动端文章信息 -->
+    <div class="article-top-meta mobile-view">
+      <span>
+        发布 : 2019-03-06
+      </span>
+      <span>
+        分类 :
+        
+          <a href="/categories/文章分类/">
+            文章分类
+          </a>
+        
+      </span>
+      
+        <span>
+          浏览 : <span class="article-timer" data-identity="test"></span>
+        </span>
+      
+    </div>
+    
+    <!-- 文章简介 -->
+    <div class="article-content">
+      <div class="markdown-body article-content--inner" v-html="mdToHtml(psg.summary)">
+        <p>在<code>&lt;!-- more --&gt;</code>之前编写文章的摘要内容！！！</p>
+      </div>
+    </div>
+    <div class="article-footer">
+      <div class="article-meta pull-left">
+        <!-- 分类pc端可见 -->
+        <span class="pc-view">
+          <i class="iconfont icon-tag"></i>分类:
+          
+            <a href="/categories/文章分类/">
+              文章分类
+            </a>
+          
+        </span>
+        <span>
+          <i class="iconfont icon-06tags"></i>标签:
+          
+            
+              <span class="span--tag">
+                <a href="/tags/文章标签1/">
+                  #文章标签1
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/文章标签2/">
+                  #文章标签2
+                </a>
+              </span>
+            
+              <span class="span--tag">
+                <a href="/tags/">
+                  #...
+                </a>
+              </span>
+            
+                    
+        </span>
+      </div>
+      
+        <div class="article-meta pull-right">
+          <span class="pc-view">
+            <i class="iconfont icon-view"></i>浏览: <span class="article-timer" data-identity="test"></span>
+          </span>
+        </div>
+      
+    </div>
+  </div>
+  
+  <div class="post">
+    <h1 class="article-title">
       <a href="/passages/simple-blog-with-hexo-github/">
         <span>用 Hexo+GitHub 免费搭建个人博客小白教程2019</span>
       </a>

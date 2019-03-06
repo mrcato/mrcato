@@ -8,7 +8,7 @@
   
   
   
-  <title>标签: ... | CodePress</title>
+  <title>标签: 文章标签2 | CodePress</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -193,7 +193,7 @@
     <div class="collection-title">
       <h2>
         
-          <span>标签 : ...</span>
+          <span>标签 : 文章标签2</span>
         
       </h2>
     </div>
@@ -384,21 +384,6 @@ document.querySelector(".back-to-top").addEventListener("click", backToTop, fals
       $(".post img").each(function () {
         // $(this).attr("data-fancybox", "gallery"); // if you add 'data-fancybox', img will display after showed
         var element = document.createElement("a");
-        $(element).attr("data-fancybox", "gallery");
-        $(element).attr("href", $(this).attr("src"));
-        $(this).wrap(element);
-      });
-      
-      clearInterval(fancyTimer);
-    });
-  }, 10);
-</script>
-
-    
-  </body>
-
-</html>
-reateElement("a");
         $(element).attr("data-fancybox", "gallery");
         $(element).attr("href", $(this).attr("src"));
         $(this).wrap(element);
